@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 
 // *** DATABASE ***
 // connect to remote mongoos instance
-mongoose.connect('mongodb://asba-admin:#IloveBeer@ds149557.mlab.com:49557/asba');
+var db = process.env.MONGODB_URL || 'mongodb://asba-admin:#IloveBeer@ds149557.mlab.com:49557/asba';
+mongoose.connect(db);
 
 
 // *** Routes for API ***
