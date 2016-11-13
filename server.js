@@ -19,6 +19,12 @@ mongoose.connect('mongodb://asba-admin:#IloveBeer@ds149557.mlab.com:49557/asba')
 // *** Routes for API ***
 var router = express.Router();
 
+// middleware for logging
+router.use(function(req, res, next) {
+  console.log("Someone's thirsty for ", req.url);
+  next(); // key to movign past the middleware and to the routes
+});
+
 router.get('/', function(req, res) {
   res.json({ message : "Cheers! You made it!" });
 });
