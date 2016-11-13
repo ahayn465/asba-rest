@@ -2,7 +2,7 @@
   "name": "asba_rest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "test"
   },
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ahayn465/asba-rest#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.7"
   }
 }
