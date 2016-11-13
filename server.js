@@ -49,7 +49,8 @@ router.route('/breweries')
                 res.send(err);
 
             res.json({
-                message: "Brewery Created"
+                message: "Brewery created",
+                data: brewery
             });
         });
     })
@@ -58,6 +59,57 @@ router.route('/breweries')
             if(err)
                 res.send(err);
             res.json(breweries);
+        });
+    });
+
+router.route('/breweries/:brewery_id')
+    .get(function(req, res) {
+        Brewery.findById(req.params.brewery_id, function(err, brewery) {
+            if(err)
+                res.send(err);
+            res.json(brewery);
+        });
+    })
+
+    .put(function(req, res){
+        Brewery.findById(req.params.brewery_id, function(err, brewery){
+            if(err)
+                res.send(err);
+
+            if(req.body.name)
+                brewery.name = req.body.name;
+            if(req.body.description)
+                brewery.description = req.body.description;
+            if(req.body.adddress)
+                brewery.adddress = req.body.adddress;
+            if(req.body.city)
+                brewery.city = req.body.city;
+            if(req.body.phone)
+                brewery.phone = req.body.phone;
+            if(req.body.latd)
+                brewery.latd = req.body.latd;
+            if(req.body.longd)
+                brewery.longd = req.body.longd;
+
+            brewery.save(function(err){
+                if(err)
+                    res.send(err);
+                res.json({
+                    message : "Brewery updated",
+                    data: brewery
+                });
+            })
+
+        });
+    })
+
+    .delete(function(req,res){
+        Brewery.remove({
+            _id: req.params.brewery_id
+        }, function(err, brewery){
+            if(err)
+                res.send(err)
+            res.json({ message : "Brewery deleted :( "});
         });
     });
 
