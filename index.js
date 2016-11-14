@@ -29,7 +29,11 @@ router.use(function(req, res, next){
 
 router.get('/', function(req, res) {
     res.json({
-        message: "Cheers! You made it!"
+        message: "Cheers! You made it!",
+        endpoints: {
+            breweries: '/api/breweries',
+            brewery: '/api/breweries/brewery_id'
+        }
     });
 });
 
