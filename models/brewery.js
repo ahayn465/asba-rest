@@ -11,4 +11,5 @@ var BrewerySchema = new Schema({
   longd: Number
 });
 
+
 module.exports = mongoose.model("Brewery", BrewerySchema)
