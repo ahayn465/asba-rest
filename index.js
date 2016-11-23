@@ -42,6 +42,8 @@ router.route('/breweries')
     .post(function(req, res) {
         var brewery = new Brewery();
         brewery.name = req.body.name;
+        brewery,email = req.body.email;
+        brewery.website = req.body.website;
         brewery.description = req.body.description;
         brewery.address = req.body.address;
         brewery.city = req.body.city;
@@ -83,6 +85,10 @@ router.route('/breweries/:brewery_id')
 
             if(req.body.name)
                 brewery.name = req.body.name;
+            if(req.body.email)
+                brewery.email = req.body.email;
+            if(req.body.website)
+                brewery.website = req.body.website;
             if(req.body.description)
                 brewery.description = req.body.description;
             if(req.body.adddress)
