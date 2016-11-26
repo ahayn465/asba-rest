@@ -43,6 +43,7 @@ router.route('/breweries')
         var brewery = new Brewery();
         brewery.name = req.body.name;
         brewery,email = req.body.email;
+        brewery.image = req.body.image;
         brewery.website = req.body.website;
         brewery.description = req.body.description;
         brewery.address = req.body.address;
@@ -89,6 +90,8 @@ router.route('/breweries/:brewery_id')
                 brewery.email = req.body.email;
             if(req.body.website)
                 brewery.website = req.body.website;
+            if(req.body.image)
+                brewery.website = req.body.image;
             if(req.body.description)
                 brewery.description = req.body.description;
             if(req.body.adddress)
