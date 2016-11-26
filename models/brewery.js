@@ -10,8 +10,8 @@ var BrewerySchema = new Schema({
   address: String,
   city: String,
   phone: String,
-  latd: Number,
-  longd: Number
+  latd: String,
+  longd: String
 });
 
 
