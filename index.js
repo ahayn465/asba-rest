@@ -91,7 +91,7 @@ router.route('/breweries/:brewery_id')
             if(req.body.website)
                 brewery.website = req.body.website;
             if(req.body.image)
-                brewery.website = req.body.image;
+                brewery.image = req.body.image;
             if(req.body.description)
                 brewery.description = req.body.description;
             if(req.body.adddress)
