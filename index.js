@@ -51,6 +51,10 @@ router.route('/breweries')
         brewery.phone = req.body.phone;
         brewery.latd = req.body.latd;
         brewery.longd = req.body.longd;
+        brewery.placeId = req.body.placeId;
+        brewery.placeId = req.body.instagram;
+        brewery.placeId = req.body.twitter;
+        brewery.placeId = req.body.facebook;
 
         brewery.save(err => {
             if (err)
@@ -104,6 +108,14 @@ router.route('/breweries/:brewery_id')
                 brewery.latd = req.body.latd;
             if(req.body.longd)
                 brewery.longd = req.body.longd;
+            if(req.body.placeId)
+                brewery.placeId = req.body.placeId;
+            if(req.body.instagram)
+                brewery.placeId = req.body.instagram;
+            if(req.body.twitter)
+                brewery.placeId = req.body.twitter;
+            if(req.body.facebook)
+                brewery.placeId = req.body.facebook;
 
             brewery.save(function(err){
                 if(err)

@@ -11,7 +11,11 @@ var BrewerySchema = new Schema({
   city: String,
   phone: String,
   latd: String,
-  longd: String
+  longd: String,
+  placeId: String[],
+  instagram: String,
+  twitter: String,
+  facebook String
 });
 
 
